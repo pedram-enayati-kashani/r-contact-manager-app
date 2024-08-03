@@ -18,23 +18,17 @@ const Contact = () =>{
                             <ul className="list-group">
                                 <li className="list-group-item list-group-item-dark">
                                     نام و نام خانوداگی :{"  "}
-                                    <span className="fw-bold">
-                    یونس قربانی
-                  </span>
+                                    <span className="fw-bold">یونس قربانی</span>
                                 </li>
 
                                 <li className="list-group-item list-group-item-dark">
                                     شماره موبایل :{"  "}
-                                    <span className="fw-bold">
-                    09350001122
-                  </span>
+                                    <span className="fw-bold">09350001122</span>
                                 </li>
 
                                 <li className="list-group-item list-group-item-dark">
                                     آدرس ایمیل :{"  "}
-                                    <span className="fw-bold">
-                    younes.gh@chmail.ir
-                  </span>
+                                    <span className="fw-bold">younes.gh@chmail.ir</span>
                                 </li>
                             </ul>
                         </div>
