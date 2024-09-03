@@ -14,7 +14,7 @@ const App = ()=>{
     const [loading, setLoading] = useState(false);
   return (
     <div className="App">
-      <Navbar/>
+        <Navbar/>
         <Routes>
             <Route path="/" element={<Navigate to="/contacts"/>}/>
             <Route path="/contacts" element={<Contacts contacts={getContacts} loading={loading}/>}/>
