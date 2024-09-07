@@ -1,6 +1,7 @@
-import {useState} from "react";
+import {useState,useEffect} from "react";
 import './App.css';
 import {Routes,Route,Navigate} from "react-router-dom";
+import axios from "axios";
 import {
     AddContact,
     EditContact,
@@ -9,9 +10,29 @@ import {
     Navbar
 } from "./components";
 
+import {getAllContacts ,getAllGroups} from './services/contactService'
+
 const App = ()=>{
     const [getContacts, setContacts] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [getGroups, setGroups] = useState([]);
+    useEffect(()=>{
+        const fetchData = async () => {
+            try{
+                setLoading(true);
+                const  {data:contactsData} = await getAllContacts();
+                const {data:groupsData} = await getAllGroups();
+                setContacts(contactsData);
+                setGroups(groupsData);
+                setLoading(false);
+            }catch (err) {
+                console.log(err.message)
+                setLoading(false)
+            }
+        }
+
+        fetchData();
+    },[]);
   return (
     <div className="App">
         <Navbar/>
