@@ -12,7 +12,7 @@ export const getAllContacts = () => {
 
 // @desc Get Contact With Contact ID
 // @route Get http://localhost:9000/contacts/:contactId
-export const getContacts = (contactID) =>{
+export const getContact = (contactID) =>{
     const url = `${SERVER_URL}/contacts/${contactID}`;
     return axios.get(url);
 }

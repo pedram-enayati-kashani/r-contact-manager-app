@@ -47,7 +47,7 @@ const AddContact = ({
                                             <input
                                                 name="fullname"
                                                 type="text"
-                                                value={contact.fullname}
+                                                value={contact.fullName}
                                                 onChange={setContactInfo}
                                                 className="form-control"
                                                 placeholder="نام و نام خانوادگی"
