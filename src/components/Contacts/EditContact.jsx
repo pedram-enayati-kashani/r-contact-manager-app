@@ -10,14 +10,14 @@ import {
 import Spinner from "../Spinner";
 import { COMMENT, ORANGE, PURPLE } from "../../helpers/colors";
 
-const EditContact = () => {
+const EditContact = ({ forceRender, setForceRender }) => {
     const { contactId } = useParams();
     const navigate = useNavigate();
 
     const [state, setState] = useState({
         loading: false,
         contact: {
-            fullName: "",
+            fullname: "",
             photo: "",
             mobile: "",
             email: "",
@@ -65,6 +65,7 @@ const EditContact = () => {
             const { data } = await updateContact(state.contact, contactId);
             setState({ ...state, loading: false });
             if (data) {
+                setForceRender(!forceRender);
                 navigate("/contacts");
             }
         } catch (err) {
@@ -102,7 +103,7 @@ const EditContact = () => {
                                                 name="fullname"
                                                 type="text"
                                                 className="form-control"
-                                                value={contact.fullName}
+                                                value={contact.fullname}
                                                 onChange={setContactInfo}
                                                 required={true}
                                                 placeholder="نام و نام خانوادگی"

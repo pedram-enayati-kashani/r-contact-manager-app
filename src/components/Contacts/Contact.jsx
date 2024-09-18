@@ -1,7 +1,7 @@
 import {CURRENTLINE, CYAN, ORANGE, PURPLE, RED} from "../../helpers/colors";
 import {Link} from "react-router-dom";
 
-const Contact = ({contact}) =>{
+const Contact = ({contact,confirmDelete}) =>{
     return (
         <div className="col-md-6">
             <div style={{backgroundColor: CURRENTLINE}} className="card my-2">
@@ -10,7 +10,7 @@ const Contact = ({contact}) =>{
                         <div className="col-md-4 col-sm-4">
                             <img
                                 src={contact.photo}
-                                alt={contact.fullName}
+                                alt={contact.fullname}
                                 style={{border: `1px solid ${PURPLE}`}}
                                 className="img-fluid rounded"
                             />
@@ -19,7 +19,7 @@ const Contact = ({contact}) =>{
                             <ul className="list-group">
                                 <li className="list-group-item list-group-item-dark">
                                     نام و نام خانوداگی :{"  "}
-                                    <span className="fw-bold">{contact.fullName}</span>
+                                    <span className="fw-bold">{contact.fullname}</span>
                                 </li>
 
                                 <li className="list-group-item list-group-item-dark">
@@ -48,6 +48,7 @@ const Contact = ({contact}) =>{
                                 <i className="fa fa-pen"/>
                             </Link>
                             <button
+                                onClick={confirmDelete}
                                 className="btn my-1"
                                 style={{backgroundColor: RED}}
                             >
